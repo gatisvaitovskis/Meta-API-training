@@ -1,3 +1,6 @@
+Feature: User Profile
+  Scenario: User is authorized
+
 Feature: Location
 
   Scenario: Create new location
