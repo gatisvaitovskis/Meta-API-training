@@ -1,20 +1,18 @@
-Given(/^user is authorized$/) do
-  authorization
-end
 
 Then(/^user lists all bookings$/) do
-  list_all_bookings
+  pending
 end
 
 And(/^user creates a new booking$/) do
-  list_all_resources
-  create_booking
+  pending
 end
 
 Then(/^user updates the meeting - (.*)$/) do |action|
-  update_meeting(action)
+  #update_meeting(action)
+  pending
 end
 
 Then(/^user deletes the booking$/) do
-  delete_booking
+  #delete_booking
+  pending
 end
