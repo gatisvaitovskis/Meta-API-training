@@ -36,18 +36,27 @@ end
 
 def receive_location
   receive_location_res = get("#{@api}/locations/#{@location_id}",
-                              headers: { 'Authorization' => 'Basic ' + @authToken,
-                                         'content-type' => 'application/json' },
-                              cookies: {})
+                             headers: { 'Authorization' => 'Basic ' + @authToken,
+                                        'content-type' => 'application/json' },
+                             cookies: {})
   assert_equal(200, receive_location_res.code, 'Unable to receive location information OR the location does not match')
 end
 
 def update_location
+  payload = {
+    "name": "Tallinn",
+    "description": "Not the best city",
+    "latitude": 58.2131,
+    "longitude": 26.2341,
+    "meta": {
+      "city": "Tallinn"
+    }
+  }
   update_location_res = put("#{@api}/locations/#{@location_id}",
                             headers: { 'Authorization' => 'Basic ' + @authToken,
                                        'content-type' => 'application/json' },
                             cookies: {},
-                            payload: {}.to_json)
+                            payload: payload.to_json)
   assert_equal(204, update_location_res.code, 'Unable to update the location')
 end
 
