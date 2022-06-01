@@ -1,4 +1,4 @@
-Given(/^prepare_auth_token$/) do
+Given(/^prepare auth token$/) do
   prepare_auth_token
 end
 

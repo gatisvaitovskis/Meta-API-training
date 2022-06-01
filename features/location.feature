@@ -1,7 +1,7 @@
 Feature: Location
 
   Scenario: Create new location
-    Given user is authorized
+    Given prepare auth token
     Then user creates new location
     And user updates location
     Then user delete location
