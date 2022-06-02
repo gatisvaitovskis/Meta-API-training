@@ -3,8 +3,8 @@ require 'minitest'
 
 
 def prepare_auth_token
-  api_key = 'test_api_key_lWPkHUdU9zn5zD993yBQ2RKjwFXBGFcf' #local variable
-  @authToken = Base64.strict_encode64(":#{api_key}") #global variable
+  api_key = 'test_api_key_lWPkHUdU9zn5zD993yBQ2RKjwFXBGFcf'
+  @authToken = Base64.strict_encode64(":#{api_key}")
 end
 
 def create_location
@@ -65,9 +65,9 @@ def delete_location
 end
 
 def retrieve_deleted_location
-  list_location_res = get("#{@api}/locations/#{@location_id}",
+  list_location_response = get("#{@api}/locations/#{@location_id}",
                           headers: { 'Authorization' => 'Basic ' + @authToken })
-  assert_equal(404, list_location_res.code, 'Location is not deleted')
+  assert_equal(404, list_location_response.code, 'Location is not deleted')
 
 end
 
